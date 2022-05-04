@@ -1,18 +1,24 @@
 import React from 'react'
-import { Button } from '../Button'
 
-import { List, ListItem, ListItemNumber, ListItemText } from './styled'
+import { TodoListItem } from '../TodoListItem'
 
-export const TodoList = ({ todoList, deleteTodo }) => {
-// console.log(todos)
+import { List } from './styled'
+
+export const TodoList = ({ todoList, setTodoList }) => {
+
   return (
     <List>
-      {todoList.map((item, index) => (
-        <ListItem key={item.id}>
-          <ListItemNumber>{index + 1}.</ListItemNumber>
-          <ListItemText>{item.text}</ListItemText>
-          <Button title='delete' handleClick={() => deleteTodo(item)} />
-        </ListItem>
+      {todoList.map((todo, index) => (
+        <TodoListItem 
+          text={todo.text}
+          id={todo.id}
+          index={index}
+          key={todo.id}
+          setTodoList={setTodoList}
+          todoList={todoList}
+          todo={todo}
+          completed={todo.completed}
+        />
       ))}
     </List>
   )
