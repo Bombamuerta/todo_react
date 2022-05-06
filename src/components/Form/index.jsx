@@ -4,10 +4,14 @@ import { Button } from '../Button'
 import { 
   FormWrapper,
   Input,
-  InputWrapper 
+  InputWrapper,
 } from './styled'
 
-export const Form = ({ inputValue, getInputValue, submitTodo }) => {
+export const Form = ({ 
+  inputValue, 
+  getInputValue, 
+  submitTodo 
+  }) => {
 
   return (
     <FormWrapper>
@@ -18,8 +22,9 @@ export const Form = ({ inputValue, getInputValue, submitTodo }) => {
           onChange={getInputValue}
         />
         <Button 
-          title='submit todo'
-          handleClick={submitTodo} 
+          handleClick={submitTodo}
+          src='/images/icon_submit.svg'
+          customMargin={'0 0 0 20px'} 
         />
       </InputWrapper>
     </FormWrapper>

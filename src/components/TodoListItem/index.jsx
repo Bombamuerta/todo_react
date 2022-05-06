@@ -6,6 +6,7 @@ import {
   ListItem,
   ListItemText,
   ListItemNumber,
+  ListItemWrapper,
 } from './styled'
 
 export const TodoListItem = ({
@@ -19,27 +20,31 @@ export const TodoListItem = ({
   const deleteTodo = () => {
     setTodoList(todoList.filter((el) => el.id !== todo.id))
   }
+  
   const [completed, setCompleted] = useState(false)
 
   const completeTodo = () => {
     setCompleted(!completed)
   }
 
-  // TODO change "complete" btn to trash icon
   return (
+    <ListItemWrapper>
     <ListItem> 
-      <ListItemNumber>{index + 1}</ListItemNumber>
+      <ListItemNumber>{index + 1}.</ListItemNumber>
       <ListItemText isCompleted={completed}>
         {text}
       </ListItemText>
-      <Button 
-        title='complete'
-        handleClick={completeTodo}
-      />
-      <Button 
-        title='delete'
-        handleClick={deleteTodo} 
-      />
     </ListItem>
+    <Button 
+        src='/images/icon_check.svg'
+        handleClick={completeTodo}
+        customMargin={'0 0 0 20px'}
+      />
+      <Button 
+        src='/images/icon_trash.svg'
+        handleClick={deleteTodo}
+        customMargin={'0 0 0 20px'} 
+      />
+    </ListItemWrapper>
   )
 }

@@ -5,6 +5,9 @@ export const FooterWrapper = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid rgb(219,225,226);
-  padding: 5px 0;
+  padding: 20px 0;
+`
+
+export const DeleteAllMessage = styled.span`
+  margin: 0 10px;
 `

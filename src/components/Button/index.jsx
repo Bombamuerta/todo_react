@@ -1,13 +1,20 @@
 import React from 'react'
-import { ButtonWrapper } from './styled'
+import { ButtonWrapper, ButtonIcon } from './styled'
 
-export const Button = ({ title, handleClick }) => {
+export const Button = ({ 
+  handleClick, 
+  src, 
+  customMargin, 
+  isDisabled 
+  }) => {
 
   return (
     <ButtonWrapper 
-      onClick={handleClick}
+      onClick={handleClick} 
+      customMargin={customMargin}
+      isDisabled={isDisabled}
     >
-      {title}
+      <ButtonIcon src={src} />
     </ButtonWrapper>
   )
 }

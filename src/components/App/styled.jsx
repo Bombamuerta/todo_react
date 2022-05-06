@@ -3,8 +3,8 @@ import { devices } from '../../devices'
 
 export const AppWrapper = styled.main`
   width: 100%;
-  border-radius: 10px;
-  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #7FFE02;
   max-width: 450px;
   margin-top: 10rem;
 

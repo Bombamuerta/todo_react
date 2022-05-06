@@ -1,15 +1,19 @@
 import React from 'react'
 import { Button } from '../Button'
-import { FooterWrapper } from './styled'
+import { FooterWrapper, DeleteAllMessage } from './styled'
 
-export const Footer = ({ deleteAllTodos }) => {
+export const Footer = ({ deleteAllTodos, todoList }) => {
+
+  const disabled = todoList.length === 0
 
   return (
     <FooterWrapper>
       <Button 
-        title='delete all'
+        src='/images/icon_trash.svg'
         handleClick={deleteAllTodos}
+        isDisabled={disabled}
       />
+      <DeleteAllMessage>Delete all</DeleteAllMessage>
   </FooterWrapper>
   )
 

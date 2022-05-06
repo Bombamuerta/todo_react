@@ -1,5 +1,4 @@
 import { createGlobalStyle} from 'styled-components'
-// import { colors } from './colors'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -16,8 +15,9 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'PT Sans', sans-serif;
-    background-image: url(images/bg.png);
-    font-size: 12px;
+    background-color: #222;
+    font-size: 16px;
+    color: #fff;
   }
 
   a {
